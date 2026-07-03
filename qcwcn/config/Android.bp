@@ -17,6 +17,10 @@ prebuilt_etc {
     src: ":wpa_supplicant_conf_gen",
     sub_dir: "wifi",
     vendor: true,
+    enabled: select(soong_config_variable("wpa_supplicant_8", "board_wlan_device"), {
+        "qcwcn": true,
+        default: false,
+    }),
     licenses: [
         "external_wpa_supplicant_8_license",
     ],
