@@ -14,6 +14,8 @@
 
 prebuilt_etc {
     name: "wpa_supplicant.conf",
+    // Disabled to avoid duplicate wpa_supplicant.conf module (bcmdhd path is the active one).
+    enabled: false,
     src: ":wpa_supplicant_conf_gen",
     sub_dir: "wifi",
     vendor: true,
